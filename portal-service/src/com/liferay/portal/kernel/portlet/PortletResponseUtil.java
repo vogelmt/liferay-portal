@@ -286,8 +286,6 @@ public class PortletResponseUtil {
 
 		mimeResponse.setProperty(
 			HttpHeaders.CACHE_CONTROL, HttpHeaders.CACHE_CONTROL_PRIVATE_VALUE);
-		mimeResponse.setProperty(
-			HttpHeaders.PRAGMA, HttpHeaders.PRAGMA_ANY_TEXT_EXEPT_NO_CACHE);
 
 		if (Validator.isNotNull(fileName)) {
 			String contentDisposition =
