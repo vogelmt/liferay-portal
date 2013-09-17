@@ -6125,18 +6125,18 @@ public class PortalImpl implements Portal {
 		boolean isCasAuthEnabled = _safePrefPropsUtilGetBoolean(
 			companyId, PropsKeys.CAS_AUTH_ENABLED,
 			PropsValues.CAS_AUTH_ENABLED);
+		boolean isLoginDialogDisabled = _safePrefPropsUtilGetBoolean(
+			companyId, PropsKeys.LOGIN_DIALOG_DISABLED,
+			PropsValues.LOGIN_DIALOG_DISABLED);
+		boolean isNtlmAuthEnabled = _safePrefPropsUtilGetBoolean(
+			companyId, PropsKeys.NTLM_AUTH_ENABLED,
+			PropsValues.NTLM_AUTH_ENABLED);
 		boolean isOpenSSOAuthEnabled = _safePrefPropsUtilGetBoolean(
 			companyId, PropsKeys.OPEN_SSO_AUTH_ENABLED,
 			PropsValues.OPEN_SSO_AUTH_ENABLED);
-		boolean isPortalJAASEnabled = _safePrefPropsUtilGetBoolean(
-			companyId, PropsKeys.PORTAL_JAAS_ENABLE,
-			PropsValues.PORTAL_JAAS_ENABLE);
-		boolean isSiteMinderAuthEnabled = _safePrefPropsUtilGetBoolean(
-			companyId, PropsKeys.SITEMINDER_AUTH_ENABLED,
-			PropsValues.SITEMINDER_AUTH_ENABLED);
 
-		if (isCasAuthEnabled || isOpenSSOAuthEnabled || isPortalJAASEnabled ||
-			isSiteMinderAuthEnabled) {
+		if (isCasAuthEnabled || isLoginDialogDisabled || isNtlmAuthEnabled ||
+			isOpenSSOAuthEnabled) {
 
 			return true;
 		}
